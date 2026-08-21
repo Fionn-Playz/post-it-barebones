@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post-It Note</title>
+
+  <!-- Custom App Icon Links -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -185,7 +191,6 @@
       paper.classList.add('peeling');
       setTimeout(() => {
         window.close();
-        // Fallback if browser security blocks closing user-opened tab
         location.href = "about:blank";
       }, 320);
     };
