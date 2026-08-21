@@ -186,13 +186,17 @@
 
     txt.oninput = saveData;
 
-    // Peel off and close tab
+    // Close logic (Peel off animation -> Close app / Hide paper)
     document.getElementById('closeBtn').onclick = () => {
       paper.classList.add('peeling');
+      
       setTimeout(() => {
+        // Try closing the window (works in PWA / popups)
         window.close();
-        location.href = "about:blank";
-      }, 320);
+
+        // Fallback: hide the paper element completely so the tab is empty
+        paper.style.display = 'none';
+      }, 350);
     };
 
     // Drawing and typing simultaneously
